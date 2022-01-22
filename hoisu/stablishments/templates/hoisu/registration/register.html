@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoisu | Register </title>
+</head>
+<body>
+<body>
+  {% load crispy_forms_tags %}
+    <div class="">
+      <div class="">
+          <div class="logo" style="">
+              <a href="#"><img alt="" src="#"></a>
+          </div>
+        <h4 class="auth-header">
+          Create your new Hoisu account
+        </h4>
+          <form action="" method="POST" style="">
+              {% csrf_token %}
+              {{ form | crispy }}
+              <br>
+              <input type="submit" value="Register" class="btn btn-success" style="width:100%;">
+              <br><br>
+              <div style="">
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'home' %}">Go home</a>
+
+                  {% else %}
+                  <a href="{% url 'home' %}">Go home</a>
+                  <a href="{% url 'login' %}">Log me In</a>
+                  {% endif %}
+              </div>
+              <br>
+          </form>
+      </div>
+    </div>
+  </body>
+</body>
+</html>
